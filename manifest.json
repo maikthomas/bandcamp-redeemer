@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Bandcamp redeemer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Bandcamp redeem code helper. Paste your codes and it will try until one works :)",
   "icons": {
     "16": "images/icon-16.png",
