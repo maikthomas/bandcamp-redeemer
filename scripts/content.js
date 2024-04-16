@@ -21,13 +21,11 @@ const waitUntilNotLoading = async () => {
 
 
 const tryCode = async (codeInput, code) => {
-  const hasError = () => !!document.querySelector('#code .errormsg');
+  const hasError = () => document.querySelector('#code .errormsg') && window.getComputedStyle(document.querySelector('#code .errormsg')).display !== 'none';
   codeInput.value = code;
   codeInput.dispatchEvent(new Event('input'));
   await new Promise((res) => setTimeout(() => res(), 100));
   await waitUntilNotLoading();
-  if (!hasError()) {
-  }
   return !hasError();
 }
 
@@ -43,12 +41,15 @@ const tryCodes = async (codes) => {
 }
 
 chrome.runtime.onMessage.addListener(
-    async function(request, sender, sendResponse) {
-      if (request.codes) {
-        const success = await tryCodes(request.codes);
-        sendResponse({ result: success ? 'success': 'failure' });
-      } else {
-        sendResponse({ result: 'error' });
-      }
+    function(request, sender, sendResponse) {
+      (async () => {
+        if (request.codes) {
+          const success = await tryCodes(request.codes);
+          sendResponse({ result: success ? 'success': 'failure' });
+        } else {
+          sendResponse({ result: 'error' });
+        }
+      })();
+      return true;
     }
   );
