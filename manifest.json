@@ -1,27 +1,25 @@
 {
-    "manifest_version": 3,
-    "name": "Bandcamp redeemer",
-    "version": "0.1",
-    "description": "Try a series of codes until one works :)",
-    "permissions": [
-        "activeTab",
-        "scripting"
+  "manifest_version": 3,
+  "name": "Bandcamp redeemer",
+  "version": "0.0.1",
+  "description": "Bandcamp redeem code helper. Paste your codes and it will try until one works :)",
+  "icons": {
+    "16": "images/icon-16.png",
+    "38": "images/icon-38.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "scripts/content.js"
       ],
-    "icons": {
-        "16": "images/icon-16.png",
-        "38": "images/icon-38.png",
-        "48": "images/icon-48.png",
-        "128": "images/icon-128.png"
-      },
-      "content_scripts": [
-        {
-          "js": ["scripts/content.js"],
-          "matches": [
-            "https://*.bandcamp.com/*"
-          ]
-        }
-      ],
-      "action": {
-        "default_popup": "popup.html"
-      }
+      "matches": [
+        "https://*.bandcamp.com/*"
+      ]
     }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
