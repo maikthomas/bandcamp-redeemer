@@ -11,7 +11,7 @@ https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#lo
 When on a bandcamp yum page, click the extension and paste the codes into the text box in the popup.
 
 If it works, enter email if desired, then hit redeem.
-[<img alt="alt_text" src="bandcampRedeemer.png"/>]()
+[<img alt="alt_text" src="./bandcampRedeemer.png"/>]()
 
 ## Thanks
 
