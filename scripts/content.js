@@ -24,14 +24,10 @@ const tryCode = async (codeInput, code) => {
   const hasError = () => !!document.querySelector('#code .errormsg');
   codeInput.value = code;
   codeInput.dispatchEvent(new Event('input'));
-  debugger;
   await new Promise((res) => setTimeout(() => res(), 100));
-  debugger;
   await waitUntilNotLoading();
   if (!hasError()) {
-    debugger;
   }
-  debugger;
   return !hasError();
 }
 
@@ -39,9 +35,7 @@ const tryCodes = async (codes) => {
   const codeInput = document.querySelector('#redeem-form #code  #code-input')
 
   for (let i = 0; i < codes.length; i++) {
-    debugger;
     const isValidCode = await tryCode(codeInput, codes[i]);
-    debugger;
     if (isValidCode) {
       return isValidCode;
     }
@@ -50,7 +44,6 @@ const tryCodes = async (codes) => {
 
 chrome.runtime.onMessage.addListener(
     async function(request, sender, sendResponse) {
-      debugger;
       if (request.codes) {
         const success = await tryCodes(request.codes);
         sendResponse({ result: success ? 'success': 'failure' });

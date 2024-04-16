@@ -11,7 +11,6 @@ const submitCodes = async (codes) => {
     }
   };
 
-  debugger;
   const button = document.querySelector('#submit');
   const textArea = document.querySelector('#codesArea');
   button.onclick = () => {
