@@ -3,8 +3,9 @@
 A Chrome Extension to try bandcamp redeem codes until one works.
 
 ## Setup
-Hopefully published to the Chrome Web Store soon. For now you can install as an unpacked extension as using the instructions here:
+Available on the Chrome Web Store: https://chromewebstore.google.com/detail/bandcamp-redeemer/pbhjodockdljkmoflhfflbpdpgdmmeio?hl=en&authuser=0
 
+Or you can download the project and install as an unpacked extension as using the instructions here:
 https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked
 
 ## Usage
